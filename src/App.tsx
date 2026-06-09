@@ -1,12 +1,4 @@
-/**
- * ╔══════════════════════════════════════════════════════════════════╗
- * ║   THE BARBER SHOP AND SPA — Men's Premium Grooming Website      ║
- * ║   Busaiteen / Alsayh Centre, Bahrain                            ║
- * ║   Brand: Deep navy/onyx + copper gold — executive spa aesthetic ║
- * ║ 
- * ║   • Maps: direct link to Google Maps listing                    ║
- * ╚══════════════════════════════════════════════════════════════════╝
- */
+
 
 import { useEffect, useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';

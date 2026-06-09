@@ -1,12 +1,3 @@
-/**
- * ╔══════════════════════════════════════════════════════════════════╗
- * ║   THE BARBER SHOP AND SPA — Men's Premium Grooming Website      ║
- * ║   Busaiteen / Alsayh Centre, Bahrain                            ║
- * ║   Brand: Deep navy/onyx + copper gold — executive spa aesthetic ║
- * ║   • Chatbot powered by Anthropic Claude API (VITE_ANTHROPIC_KEY)║
- * ║   • Maps: direct link to Google Maps listing                    ║
- * ╚══════════════════════════════════════════════════════════════════╝
- */
 
 import { useEffect, useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -17,7 +8,7 @@ import {
   Instagram, Menu, Sparkles, Navigation,
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import i18n from './i18n';
+import './i18n.tsx'; 
 
 /* ── Brand palette — deep executive navy + antique copper gold ── */
 const B = {
@@ -42,21 +33,38 @@ const WALINK = `https://wa.me/97339777136`;
 
 /* ── Full services & pricelist ── */
 const SERVICES = [
-  { en: 'Hair Cut',            ar: 'قص الشعر',             price: '5',     icon: '✂️' },
-  { en: 'Shave',               ar: 'حلاقة',                price: '3',     icon: '🪒' },
-  { en: 'Hair Style',          ar: 'تصفيف الشعر',          price: '4',     icon: '💈' },
-  { en: 'Hair Color',          ar: 'صباغة الشعر',          price: '15',    icon: '🎨' },
-  { en: 'Scalp Scraping',      ar: 'تقشير الرأس',          price: '4–8',   icon: '🧖' },
-  { en: 'Facial',              ar: 'العناية بالوجه',       price: '15',    icon: '✨' },
-  { en: 'Face Scraping',       ar: 'تقشير الوجه',          price: '3',     icon: '🌿' },
-  { en: 'Manicure',            ar: 'مانيكير',              price: '6',     icon: '💅' },
-  { en: 'Pedicure',            ar: 'بديكير',               price: '7',     icon: '🦶' },
-  { en: 'Foot Scraping',       ar: 'تقشير القدم',          price: '3',     icon: '🧴' },
-  { en: 'Foot Massage',        ar: 'تدليك القدم',          price: '3',     icon: '💆' },
-  { en: 'Hand Nails Cutting',  ar: 'قص أظافر اليد',        price: '2',     icon: '✂️' },
-  { en: 'Foot Nails Cutting',  ar: 'قص أظافر القدم',       price: '2.5',   icon: '✂️' },
-];
+  { en: 'Hair Cut',              ar: 'قص الشعر',                    price: '2.5',      icon: '✂️' },
+  { en: 'Beard Shave',           ar: 'حلاقة اللحية',                price: '1.5',      icon: '🪒' },
+  { en: 'Hair Wash',             ar: 'الشاور',                      price: '2',        icon: '🚿' },
+  { en: 'Hair Drying',           ar: 'ويفي ابتداءً من',             price: '4',        icon: '💨' },
 
+  { en: 'Protein Hair Treatment',ar: 'بروتين ابتداءً من',           price: '15',       icon: '✨' },
+  { en: 'Opti Smooth',           ar: 'اوبيتي سموث ابتداءً من',      price: '35',       icon: '💎' },
+
+  { en: 'Hair Dye',              ar: 'لون واحد ابتداءً من',         price: '8',        icon: '🎨' },
+  { en: 'Highlights',            ar: 'هايلايت ابتداءً من',          price: '18',       icon: '🖌️' },
+
+  { en: 'Hair Mask',             ar: 'ماسك الشعر',                  price: '4',        icon: '🧴' },
+  { en: 'Regular Hair Mask',     ar: 'ماسك عادي',                   price: '5',        icon: '🌿' },
+  { en: '99% Natural Treatment', ar: 'ماسك بعلاج 99% طبيعي',        price: '6',        icon: '🍃' },
+
+  { en: 'Classic Manicure',      ar: 'منكير اليدين',                price: '3',        icon: '💅' },
+  { en: 'Classic Pedicure',      ar: 'بدكير القدمين',               price: '4',        icon: '🦶' },
+  { en: 'Classic Mani + Pedi',   ar: 'منكير + بدكير',               price: '6',        icon: '✨' },
+
+  { en: 'Spa Manicure',          ar: 'سبا منكير اليدين',            price: '4',        icon: '🛁' },
+  { en: 'Spa Pedicure',          ar: 'سبا بدكير القدمين',           price: '5',        icon: '🧖' },
+  { en: 'Spa Mani + Pedi',       ar: 'سبا منكير + بدكير',           price: '8',        icon: '💎' },
+
+  { en: 'Royal Manicure',        ar: 'رويال منكير اليدين',          price: '5',        icon: '👑' },
+  { en: 'Royal Pedicure',        ar: 'رويال بدكير القدمين',         price: '6',        icon: '👑' },
+  { en: 'Royal Mani + Pedi',     ar: 'رويال منكير + بدكير',         price: '10',       icon: '🏆' },
+
+  { en: 'Foot Massage',          ar: 'مساج القدمين',                price: '1',        icon: '💆' },
+
+  { en: 'Regular Facial',        ar: 'العادي',                      price: '5',        icon: '✨' },
+  { en: 'Professional Facial',   ar: 'البروفيشنال',                 price: '8',        icon: '🌟' },
+];
 /* ── Opening hours ── */
 const HOURS = [
   { day: 'Monday',    hours: '10 AM – 10 PM' },
