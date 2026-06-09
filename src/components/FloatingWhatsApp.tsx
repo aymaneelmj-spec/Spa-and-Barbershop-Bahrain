@@ -6,8 +6,8 @@ export default function FloatingWhatsApp() {
   const isRTL = i18n.language === 'ar';
   const message = isRTL
     ? 'السلام عليكم، أريد الحجز في توين سيزرز'
-    : 'Hello, I would like to book an appointment at Twin Scissors';
-  const whatsappUrl = `https://wa.me/97317000900?text=${encodeURIComponent(message)}`;
+    : 'Hello, I would like to book an appointment at The Barber shop and spa - Men';
+  const whatsappUrl = `https://wa.me/97339777136?text=${encodeURIComponent(message)}`;
 
   return (
     <motion.a
