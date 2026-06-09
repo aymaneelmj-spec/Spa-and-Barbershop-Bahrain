@@ -1,0 +1,5 @@
+{
+  "name": "The Barber Shop and Spa - Men",
+  "description": "Professional Barbershop and Spa website , FAQ, reviews, photos, and a powered booking chatbot.",
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
